@@ -8,7 +8,7 @@ import Json.Decode as Decode
 import Json.Encode as Encode exposing (Value, bool, int, list, object, string)
 import Native.NativeUi
 import NativeApi.Animated exposing (AnimatedValue, decodeAnimatedValue, encodeAnimatedValue)
-import NativeUi exposing (Node, Property, on, property, renderProperty)
+import NativeUi exposing (Node, Property, on, property, renderDecodedProperty)
 import NativeUi.Style as Style
 
 
@@ -18,19 +18,19 @@ import NativeUi.Style as Style
 {-| -}
 renderHeader : (NavigationSceneRenderer -> Node a) -> Property msg
 renderHeader =
-    renderProperty "renderHeader" decodeNavigationSceneRenderer
+    renderDecodedProperty "renderHeader" decodeNavigationSceneRenderer
 
 
 {-| -}
 renderScene : (NavigationSceneRenderer -> Node a) -> Property msg
 renderScene =
-    renderProperty "renderScene" decodeNavigationSceneRenderer
+    renderDecodedProperty "renderScene" decodeNavigationSceneRenderer
 
 
 {-| -}
 renderTitleComponent : (NavigationSceneRenderer -> Node a) -> Property msg
 renderTitleComponent =
-    renderProperty "renderTitleComponent" decodeNavigationSceneRenderer
+    renderDecodedProperty "renderTitleComponent" decodeNavigationSceneRenderer
 
 
 
